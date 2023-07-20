@@ -1,0 +1,25 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: my-cluster
+  region: us-west-2   # Replace with your desired AWS region
+
+nodeGroups:
+  - name: my-nodegroup
+    instanceType: t3.medium   # Replace with your desired instance type
+    desiredCapacity: 2       # Replace with the desired number of nodes
+    maxSize: 3               # Replace with the maximum number of nodes
+    minSize: 1               # Replace with the minimum number of nodes
+    privateNetworking: true  # Set to 'false' for public IP addresses
+
+  # Add more node groups as needed
+  # - name: my-nodegroup2
+  #   instanceType: t3.large
+  #   desiredCapacity: 3
+  #   maxSize: 5
+  #   minSize: 2
+  #   privateNetworking: true
+
+# Add any additional configurations as needed
+# For example, VPC settings, security groups, IAM roles, etc.
